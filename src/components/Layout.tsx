@@ -70,7 +70,13 @@ const Layout = ({ children }: LayoutProps) => {
                     {user}
                   </Button>
                 </a>
-                <a href="/admin">
+                <a href="/employee">
+                  <Button variant="ghost" size="sm">
+                    <Icon name="Briefcase" className="w-4 h-4 mr-2" />
+                    Рабочая
+                  </Button>
+                </a>
+                <a href="/admin-dashboard">
                   <Button variant="ghost" size="sm">
                     <Icon name="Settings" className="w-4 h-4 mr-2" />
                     Админ
