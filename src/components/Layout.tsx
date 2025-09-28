@@ -34,14 +34,14 @@ const Layout = ({ children }: LayoutProps) => {
       <header className="border-b bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <h1 className="text-2xl font-bold text-primary">CinemaHub</h1>
+            <a href="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">CinemaHub</a>
             
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Фильмы</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Расписание</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Кинотеатры</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Акции</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Правила</a>
+              <a href="/movies" className="text-foreground hover:text-primary transition-colors">Фильмы</a>
+              <a href="/schedule" className="text-foreground hover:text-primary transition-colors">Расписание</a>
+              <a href="/cinemas" className="text-foreground hover:text-primary transition-colors">Кинотеатры</a>
+              <a href="/promotions" className="text-foreground hover:text-primary transition-colors">Акции</a>
+              <a href="/rules" className="text-foreground hover:text-primary transition-colors">Правила</a>
             </nav>
           </div>
 
@@ -64,10 +64,18 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Auth */}
             {user ? (
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="sm">
-                  <Icon name="User" className="w-4 h-4 mr-2" />
-                  {user}
-                </Button>
+                <a href="/profile">
+                  <Button variant="ghost" size="sm">
+                    <Icon name="User" className="w-4 h-4 mr-2" />
+                    {user}
+                  </Button>
+                </a>
+                <a href="/admin">
+                  <Button variant="ghost" size="sm">
+                    <Icon name="Settings" className="w-4 h-4 mr-2" />
+                    Админ
+                  </Button>
+                </a>
                 <Button variant="ghost" size="sm" onClick={handleLogout}>
                   <Icon name="LogOut" className="w-4 h-4" />
                 </Button>
@@ -148,17 +156,17 @@ const Layout = ({ children }: LayoutProps) => {
             <div>
               <h4 className="font-semibold mb-4">Разделы</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Фильмы</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Расписание</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Кинотеатры</a></li>
+                <li><a href="/movies" className="text-muted-foreground hover:text-primary">Фильмы</a></li>
+                <li><a href="/schedule" className="text-muted-foreground hover:text-primary">Расписание</a></li>
+                <li><a href="/cinemas" className="text-muted-foreground hover:text-primary">Кинотеатры</a></li>
               </ul>
             </div>
             
             <div>
               <h4 className="font-semibold mb-4">Информация</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Акции</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary">Правила</a></li>
+                <li><a href="/promotions" className="text-muted-foreground hover:text-primary">Акции</a></li>
+                <li><a href="/rules" className="text-muted-foreground hover:text-primary">Правила</a></li>
                 <li><a href="#" className="text-muted-foreground hover:text-primary">Контакты</a></li>
               </ul>
             </div>
